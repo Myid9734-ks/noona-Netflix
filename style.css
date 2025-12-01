@@ -1,0 +1,166 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #141414;
+    color: #ffffff;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 60px;
+}
+
+.header {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.7) 10%, rgba(0,0,0,0));
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    padding: 20px 0;
+    transition: background-color 0.3s ease;
+}
+
+.header:hover {
+    background-color: #141414;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: #e50914;
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.nav {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-link {
+    color: #e5e5e5;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #b3b3b3;
+}
+
+.main {
+    margin-top: 100px;
+    padding: 40px 0;
+}
+
+.section-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #e5e5e5;
+}
+
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.movie-card {
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.movie-card:hover {
+    transform: scale(1.05);
+    z-index: 10;
+}
+
+.movie-poster {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.movie-info {
+    padding: 10px 5px;
+}
+
+.movie-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #e5e5e5;
+    margin-top: 8px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.movie-rating {
+    font-size: 14px;
+    color: #46d369;
+    margin-top: 5px;
+}
+
+.loading {
+    color: #e5e5e5;
+    font-size: 18px;
+    text-align: center;
+    padding: 40px;
+    grid-column: 1 / -1;
+}
+
+.error {
+    color: #e50914;
+    font-size: 18px;
+    text-align: center;
+    padding: 40px;
+    grid-column: 1 / -1;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 30px;
+    }
+
+    .movie-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 15px;
+    }
+
+    .movie-poster {
+        height: 225px;
+    }
+
+    .movie-title {
+        font-size: 14px;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    .nav {
+        gap: 15px;
+    }
+
+    .nav-link {
+        font-size: 12px;
+    }
+}
