@@ -4,6 +4,16 @@ const IMG_BASE_URL = 'https://image.tmdb.org/t/p/w500';
 const NOW_PLAYING_URL = `${BASE_URL}/movie/now_playing`;
 
 const movieContainer = document.getElementById('movie-container');
+const header = document.querySelector('.header');
+
+// 스크롤 이벤트 리스너
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+});
 
 async function fetchNowPlayingMovies() {
     try {

@@ -26,7 +26,8 @@ body {
     transition: background-color 0.3s ease;
 }
 
-.header:hover {
+.header:hover,
+.header.scrolled {
     background-color: #141414;
 }
 
